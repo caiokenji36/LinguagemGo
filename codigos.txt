@@ -1,0 +1,62 @@
+para rodar o programa, tem que ir no cmd
+go build hello.go
+
+go run hello.go  ele ja compila e roda
+
+var nome string = "Caio"
+	var dinheiro float32 = 23.5
+	var idade int = 23
+
+    as variaveis podem ser declaradas assim:
+    nome := "Caio"
+    idade := 24
+
+
+    fmt.Scanf("%d", &comando)   salvar o que a pessoa digita
+    pode ser tambem feito:
+    fmt.Scan(&comando)   salvar o que a pessoa digita
+
+
+    //if comando == 1 {
+	//	fmt.Println("iniciando monitoramento")
+	//} else if comando == 2 {
+	//	fmt.Println("Exibindo logs")
+	//} else if comando == 0 {
+	//	fmt.Println("Saindo do programa")
+	//} else {
+	//	fmt.Println("Nao conheco essa")
+	//}
+
+
+    	switch comando {
+	case 1:
+		fmt.Println("iniciando monitoramento")
+	case 2:
+		fmt.Println("Exibindo logs")
+	case 0:
+		fmt.Println("Saindo do programa")
+	default:
+		fmt.Println("Nao conheco essa")
+	}
+
+
+    os.Exit(0) // para sair do programa
+    os.Exit(-1) // ele volta com algum erro
+
+
+    func devolveNomeEIdade() (string, int) {// quando for retornar dois valores, voce tem que colocar eles entre parentes
+	nome := "Caio"
+	idade := 24
+	return nome, idade
+}
+
+nome, idade := devolveNomeEIdade() //para pegar os dois valores
+
+_, idade := devolveNomeEIdade() // quando vc nao quer saber de alguma variavel, so esta interessado na segunda variavel, voce pode colocar o _
+
+if resp.StatusCode == 200 // quando o resp retorna 200 quer dizer que deu certo no site, que o site esta tudo bem
+
+ctrl + shift + k = deletar linha
+
+ctrl + ; ele comenta tudo
+alt + shift + a ele comenta varias linhas
