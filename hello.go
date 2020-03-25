@@ -1,19 +1,21 @@
 package main
 
 import (
-	"fmt" //pacote para Println e scanf
-	"net/http"
-
-	//pacote para acessar internet
-	"os" //pacote para erros e sair do aplicativo
+	"fmt"      //pacote para Println e scanf
+	"net/http" //pacote para acessar internet
+	"os"       //pacote para erros e sair do aplicativo
 	"reflect"
 )
 
+const monitoramentos = 3
+const delay = 5
+
 func main() {
-	nome, idade := devolveNomeEIdade()
-	//_, idade := devolveNomeEIdade()
-	fmt.Println(nome, idade)
-	exibeIntroducao()
+
+	// nome, idade := devolveNomeEIdade()
+	// _, idade := devolveNomeEIdade()
+	// fmt.Println(nome, idade)
+	// exibeIntroducao()
 
 	for {
 
@@ -81,8 +83,19 @@ func leComando() int { //o retorno da funcao fica depois
 
 func iniciarMonitoramento() {
 	fmt.Println("iniciando monitoramento")
-	site := "https://www.alura.com.br"
+	sites := []string{"https://www.alura.com.br", "https://www.google.com", "https://www.gmail.com"}
+
+	for i, site := range sites {
+		fmt.Println("Testando site", i, ":", site)
+		testaSite(site)
+	}
+	pulaLinha()
+
 	//resp, err :=http.Get(site) //err caso aconteça algum erro
+
+}
+
+func testaSite(site string) {
 	resp, _ := http.Get(site) //err caso aconteça algum erro
 
 	if resp.StatusCode == 200 {
@@ -90,5 +103,15 @@ func iniciarMonitoramento() {
 	} else {
 		fmt.Println("Site: ", site, "está com erros. Status Code:", resp.StatusCode)
 	}
+}
 
+func exibeNomes() {
+	nomes := []string{"Caio", "Daniela", "Larissa", "Marcela"}
+	nomes = append(nomes, "Aparecida")
+	fmt.Println(nomes)
+	fmt.Println("O meu slice tem", len(nomes))
+}
+
+func pulaLinha() {
+	fmt.Println("")
 }

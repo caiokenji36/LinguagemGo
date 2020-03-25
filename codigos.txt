@@ -60,3 +60,30 @@ ctrl + shift + k = deletar linha
 
 ctrl + ; ele comenta tudo
 alt + shift + a ele comenta varias linhas
+
+
+var sites [4]string //array
+
+nomes := []string{"Caio", "Daniela", "Larissa", "Marcela"} // outro tipo de array
+fmt.Println("O meu slice tem", len(nomes)) //saber o tamanho do array
+nomes = append(nomes, "Aparecida") //adicionar outra pessoa
+
+
+	for i := 0; i < len(sites); i++ {
+		fmt.Println(sites[i])
+	}
+
+	ou fazer 
+	for i, site := range sites {
+		fmt.Println(sites[i], site)
+	}
+
+	import (
+	"fmt"      //pacote para Println e scanf
+	"net/http" //pacote para acessar internet
+	"os"       //pacote para erros e sair do aplicativo
+	"reflect"
+	"time" // pacote de tempo
+)
+
+time.Sleep(5 * time.Second)// para esperar 5 segundos
