@@ -87,3 +87,6 @@ nomes = append(nomes, "Aparecida") //adicionar outra pessoa
 )
 
 time.Sleep(5 * time.Second)// para esperar 5 segundos
+
+
+ctrl + f para mudar o nome em todos os lugares

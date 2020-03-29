@@ -2,26 +2,39 @@ package main
 
 import (
 	"fmt"
-	c "projetos/Poo/contas"
+	cont "projetos/Poo/contas"
 )
 
+func PagarBoleto(conta verificarConta, valorDoBoleto float64) {
+	conta.Sacar(valorDoBoleto)
+}
+
+type verificarConta interface {
+	Sacar(valor float64) string
+}
+
 func main() {
-	contaDaSilvia := c.ContaCorrente{}
-	contaDaSilvia.Titular = "Silvia"
-	contaDaSilvia.Saldo = 500
+	contaDoDenis := cont.ContaPoupanca{}
+	contaDoDenis.Depositar(100)
+	contaDoDenis.Sacar(50)
+	PagarBoleto(&contaDoDenis, 30)
 
-	contaDoGustavo := c.ContaCorrente{Titular: "Gustavo", Saldo: 600}
+	contaDoCaio := cont.ContaCorrente{}
+	contaDoCaio.Depositar(100)
+	contaDoCaio.Sacar(50)
+	PagarBoleto(&contaDoCaio, 10)
 
-	status := contaDaSilvia.transferir(200, &contaDoGustavo)
-	fmt.Println(status)
-	fmt.Println(contaDaSilvia.Saldo)
-	fmt.Println(contaDoGustavo.Saldo)
+	contaDaPati := cont.ContaCorrente{}
 
-	// fmt.Println(contaDaSilvia.Saldo)
-	// fmt.Println(contaDaSilvia.sacar(200))
-	// fmt.Println(contaDaSilvia.Saldo)
-	// status, valor := contaDaSilvia.depositar(500)
-	// fmt.Println(status, "\nSeu Saldo é:", valor)
+	fmt.Println(contaDoDenis)
+	fmt.Println(contaDoDenis.ObterSaldo())
+	fmt.Println(contaDoCaio)
+	fmt.Println(contaDaPati)
+
+	//clienteBruno := cli.Titular{"Bruno", "123.31412.412", "Desenvolvedor"}
+	//contaDoBruno := cont.ContaCorrente{clienteBruno, 123, 123141, 0}
+
+	//fmt.Println(contaDoBruno)
 
 }
 
@@ -45,4 +58,23 @@ func comentarios() {
 	// contaDaDani.Saldo = 500
 
 	// fmt.Println(*contaDaDani)
+}
+
+func aulasAnteriores() {
+	// contaDaSilvia := c.ContaCorrente{}
+	// contaDaSilvia.Titular = "Silvia"
+	// contaDaSilvia.Saldo = 500
+
+	// contaDoGustavo := c.ContaCorrente{Titular: "Gustavo", Saldo: 600}
+
+	// status := contaDaSilvia.transferir(200, &contaDoGustavo)
+	// fmt.Println(status)
+	// fmt.Println(contaDaSilvia.Saldo)
+	// fmt.Println(contaDoGustavo.Saldo)
+
+	// fmt.Println(contaDaSilvia.Saldo)
+	// fmt.Println(contaDaSilvia.sacar(200))
+	// fmt.Println(contaDaSilvia.Saldo)
+	// status, valor := contaDaSilvia.depositar(500)
+	// fmt.Println(status, "\nSeu Saldo é:", valor)
 }
