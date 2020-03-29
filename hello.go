@@ -105,7 +105,7 @@ func iniciarMonitoramento() {
 
 func testaSite(site string) {
 	resp, err := http.Get(site) //err caso aconteça algum erro
-	if err != nill {
+	if err != nil {
 		fmt.Println("Ocorreu um erro:", err)
 	}
 	if resp.StatusCode == 200 {

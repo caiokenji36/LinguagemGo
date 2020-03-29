@@ -90,3 +90,14 @@ time.Sleep(5 * time.Second)// para esperar 5 segundos
 
 
 ctrl + f para mudar o nome em todos os lugares
+
+ctrl + c = para sair do travamento do console
+
+
+em html se vc escrever th*4 ele ja escreve 4 th
+
+
+usar o pgAdmin4 senha 123454321qw
+para conseguir usar com o banco de dados
+escrever no terminal go get github.com/lib/pq
+e importar _"github.com/lib/pq"
