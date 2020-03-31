@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/caio/routes"
 	"net/http"
+
+	"projetos/github.com/caio/routes"
 )
 
 func main() {
